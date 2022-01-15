@@ -1,9 +1,3 @@
-//
-//  Abstraction.swift
-//  SwiftBibill-New (iOS)
-//
-//  Created by Sanjay Kumar on 02/06/21.
-//
 
 import Foundation
 
