@@ -6,12 +6,8 @@
 //
 
 import Foundation
- 
-
-
 
 enum CompassPoint:String{
-    
     case north = "north"
     case south = "south"
     case east  = "east"
@@ -30,9 +26,9 @@ enum CompassPoint:String{
 
 //**********Iterate
 enum Beverage:CaseIterable{
- case coffee, tea, juice
+    case coffee, tea, juice
 }
- let numberOfChoices = Beverage.allCases.count
+let numberOfChoices = Beverage.allCases.count
 //print("\(numberOfChoices)beveragesavailable")
 //
 //   for beverage in Beverage.allCases {
@@ -44,8 +40,8 @@ enum Beverage:CaseIterable{
 //********* Associated Value *************
 
 enum Barcode{
- case upc(Int, Int, Int, Int)
- case qrCode(String)
+    case upc(Int, Int, Int, Int)
+    case qrCode(String)
 }
 
 

@@ -30,43 +30,24 @@ struct Product: Codable {
         case types = "tags"
         case stockInfo = "stock"
     }
-    
 }
-
-
-
-
 
 class Demo: NSObject {
     
-    
-    func fetchDataFromRemote() {
+    func exampleDecode() {
         
         let jsonString =
             """
-            {
-                "id": 1,
-                "name": "chair",
-                "price": 350,
-                "tags": [
-                "recliner",
-                "foldable"
-                ],
-                "stock": {
-                    "warehouse": 300,
-                    "retail": 20
-                }
-            }
+               {"id": 1,"name": "chair","price": 350,"tags": ["recliner","foldable"],"stock": {"warehouse": 300,"retail": 20}}
             """
-        
         if let jsonData = jsonString.data(using: String.Encoding.utf8) {
-            
-            let decoder = JSONDecoder()
-            
-            let product = try! decoder.decode(Product.self, from: jsonData)
-            
+            do{
+                let decoder = JSONDecoder()
+                let product = try ? decoder.decode(Product.self, from: jsonData)
+            }catch let error{
+                print()
+            }
             print(product)
-            
         }
     }
     
@@ -75,18 +56,11 @@ class Demo: NSObject {
         
         let tableStock = Stock.init(warehouse: 114, retail: 16)
         let table = Product.init(id: 112, name: "Long Table", price: 450, types: ["Long", "Study", "Short"], stockInfo: tableStock)
-        
         let encoder = JSONEncoder()
-        
         let productData = try! encoder.encode(table.self)
-        
         let productStr = String.init(data: productData, encoding: .utf8)
         print("String from Product data is \(productStr ?? "No data")")
         
     }
     
 }
-//
-//let encodedData = try JSONEncoder().encode(city)
-//let jsonString = String(data: encodedData,
-//                        encoding: .utf8)

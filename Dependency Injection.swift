@@ -40,7 +40,6 @@ class Client {
 let client = Client(dependency: DependencyImplementation())
 //client.foo()
 
-
 //    ✓ Pros:
 //
 //    Provides best encapsulation.
@@ -51,20 +50,6 @@ let client = Client(dependency: DependencyImplementation())
 //
 //    Dependencies cannot be changed later.
 //    Becomes cumbersome with more than 3 dependencies. Consider property injection in this case.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* ************ Property Injection ***********************/
 
